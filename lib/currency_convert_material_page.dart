@@ -5,6 +5,8 @@ class CurrencyConverterMaterialPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
+    
     return const Scaffold(
       backgroundColor: Colors.black,
       body: Center(
@@ -38,7 +40,17 @@ class CurrencyConverterMaterialPage extends StatelessWidget {
                     Radius.circular(60),
                   ),
                 ),
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    width: 2.0,
+                    style: BorderStyle.solid,
+                  ),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(60),
+                  ),
+                ),
               ),
+              keyboardType: TextInputType.number,
             ),
           ],
         ),
