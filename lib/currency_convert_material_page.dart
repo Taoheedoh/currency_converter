@@ -26,13 +26,16 @@ class CurrencyConverterMaterialPage extends StatelessWidget {
                   color: Colors.black,
                 ),
                 prefixIcon: Icon(Icons.monetization_on),
-                prefixIconColor: Colors.white60,
+                prefixIconColor: Colors.black,
                 filled: true,
-                fillColor: Colors.white60,
+                fillColor: Colors.white,
                 focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(
                     width: 2.0,
                     style: BorderStyle.solid,
+                  ),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(60),
                   ),
                 ),
               ),
