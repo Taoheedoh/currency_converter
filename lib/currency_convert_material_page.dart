@@ -50,7 +50,10 @@ class CurrencyConverterMaterialPage extends StatelessWidget {
                   ),
                 ),
               ),
-              keyboardType: TextInputType.number,
+              keyboardType: TextInputType.numberWithOptions(
+                decimal: true,
+                signed: true,
+              ),
             ),
           ],
         ),
