@@ -21,38 +21,40 @@ class CurrencyConverterMaterialPage extends StatelessWidget {
                 color: Colors.white,
               ),
             ),
-            TextField(
-              decoration: InputDecoration(
-                hintText: 'Please enter the amount in USD',
-                hintStyle: TextStyle(
-                  color: Colors.black,
+            Padding(
+              padding: EdgeInsets.all(8.0),
+              child: TextField(
+                decoration: InputDecoration(
+                  hintText: 'Please enter the amount in USD',
+                  hintStyle: TextStyle(
+                    color: Colors.black,
+                  ),
+                  prefixIcon: Icon(Icons.monetization_on),
+                  prefixIconColor: Colors.black,
+                  filled: true,
+                  fillColor: Colors.white,
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      width: 2.0,
+                      style: BorderStyle.solid,
+                    ),
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(60),
+                    ),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      width: 2.0,
+                      style: BorderStyle.solid,
+                    ),
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(60),
+                    ),
+                  ),
                 ),
-                prefixIcon: Icon(Icons.monetization_on),
-                prefixIconColor: Colors.black,
-                filled: true,
-                fillColor: Colors.white,
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    width: 2.0,
-                    style: BorderStyle.solid,
-                  ),
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(60),
-                  ),
+                   keyboardType: TextInputType.numberWithOptions(
+                    decimal: true,
                 ),
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    width: 2.0,
-                    style: BorderStyle.solid,
-                  ),
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(60),
-                  ),
-                ),
-              ),
-              keyboardType: TextInputType.numberWithOptions(
-                decimal: true,
-                signed: true,
               ),
             ),
           ],
