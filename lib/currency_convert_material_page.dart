@@ -7,6 +7,12 @@ class CurrencyConverterMaterialPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        foregroundColor: Colors.white,
+        elevation: 0,
+        title: const Text('Currency Converter'),
+      ),
       backgroundColor: Colors.black,
       body: Center(
         child: Column(
@@ -56,18 +62,21 @@ class CurrencyConverterMaterialPage extends StatelessWidget {
                 ),
               ),
             ),
-            TextButton(
-              onPressed: () {
-                if (kDebugMode) {
-                  print('button clicked');
-                }
-              },
-              style: const ButtonStyle(
-                backgroundColor: MaterialStatePropertyAll(Colors.green),
-                foregroundColor: MaterialStatePropertyAll(Colors.white),
-                fixedSize: MaterialStatePropertyAll(Size(100, 30),),
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: TextButton(
+                onPressed: () {
+                  if (kDebugMode) {
+                    print('button clicked');
+                  }
+                },
+                style: const ButtonStyle(
+                  backgroundColor: MaterialStatePropertyAll(Colors.green),
+                  foregroundColor: MaterialStatePropertyAll(Colors.white),
+                  minimumSize: MaterialStatePropertyAll(Size(double.infinity, 50),),
+                ),
+                child: const Text('Convert'),
               ),
-              child: const Text('Convert'),
             ),
           ],
         ),
