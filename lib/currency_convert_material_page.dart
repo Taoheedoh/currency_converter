@@ -6,7 +6,7 @@ class CurrencyConverterMaterialPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    int result = 0;
+    double result = 0;
 
     final TextEditingController textEditingController = TextEditingController();
 
@@ -23,18 +23,19 @@ class CurrencyConverterMaterialPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
-              '0',
-              style: TextStyle(
+             Text(
+              result.toString(),
+              style: const TextStyle(
                 fontSize: 45,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.all(8.0),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
               child: TextField(
-                decoration: InputDecoration(
+                controller: textEditingController,
+                decoration: const InputDecoration(
                   hintText: 'Please enter the amount in USD',
                   hintStyle: TextStyle(
                     color: Colors.black,
@@ -62,7 +63,7 @@ class CurrencyConverterMaterialPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                keyboardType: TextInputType.numberWithOptions(
+                keyboardType: const TextInputType.numberWithOptions(
                   decimal: true,
                 ),
               ),
@@ -72,7 +73,7 @@ class CurrencyConverterMaterialPage extends StatelessWidget {
               child: TextButton(
                 onPressed: () {
                   if (kDebugMode) {
-                    print('button clicked');
+                    result = double.parse(textEditingController.text) * 1500;
                   }
                 },
                 style: const ButtonStyle(
