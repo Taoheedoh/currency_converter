@@ -25,11 +25,11 @@ class CurrencyConverterMaterialPage extends StatefulWidget {
 }
 
 class _CurrencyConverterMaterialPageState extends State<CurrencyConverterMaterialPage> {
+  double result = 0;
+  final TextEditingController textEditingController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
-    double result = 0;
-
-    final TextEditingController textEditingController = TextEditingController();
 
     return Scaffold(
       appBar: AppBar(
@@ -45,7 +45,7 @@ class _CurrencyConverterMaterialPageState extends State<CurrencyConverterMateria
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
              Text(
-              result.toString(),
+              'NGR $result',
               style: const TextStyle(
                 fontSize: 45,
                 fontWeight: FontWeight.bold,
@@ -94,7 +94,9 @@ class _CurrencyConverterMaterialPageState extends State<CurrencyConverterMateria
               child: TextButton(
                 onPressed: () {
                   if (kDebugMode) {
-                    result = double.parse(textEditingController.text) * 1500;
+                    setState(() {
+                      result = double.parse(textEditingController.text) * 1500;
+                    });
                   }
                 },
                 style: const ButtonStyle(
